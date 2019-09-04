@@ -8,5 +8,6 @@ export class Client {
         public adress: String,
         public email: String,
         public telephone: number,
+        public id: number
     ){}
 }
