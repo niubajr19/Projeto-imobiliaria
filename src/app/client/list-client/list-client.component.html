@@ -1,8 +1,24 @@
-<!--Só para ter algo, jajá troca-->
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">Cliente 1</li>
-    <li class="list-group-item">Cliente 2</li>
-    <li class="list-group-item">Cliente 3</li>
-    <li class="list-group-item">Cliente 4</li>
-    <li class="list-group-item">Cliente 5</li>
-  </ul>
+<h1>Clients</h1>
+<table>
+    <thead>
+      <tr>
+        <th id="nameHeader">Name</th>
+        <th id="typeHeader">Type</th>
+        <th id="statusHeader">Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.name}}</td>
+        <td>{{client.type}}</td>
+        <td>{{client.status}}</td>
+        <td><a href="#" (click)="show(client.id)">Show</a></td>
+        <td><a href="#" (click)="edit(client.id)">Edit</a></td>
+        <td><a href="#" (click)="destroy(client.id)">Destroy</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <a [routerLink]="['/clients', 'new']">New Client</a>
