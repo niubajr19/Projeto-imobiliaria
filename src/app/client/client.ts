@@ -1,5 +1,5 @@
 export class Client {
-    constructor(    
+        constructor(    
         public name: String,
         public cpf: String,
         public dateOfBirth: String,

@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListClientComponent } from './client/list-client/list-client.component';
+
 import { MenuComponent } from './menu/menu.component';
+
 import { ClientComponent } from './client/client.component';
 import { ClientRegisterComponent } from './client/client-register/client-register.component';
+import { ListClientComponent } from './client/list-client/list-client.component';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { ClientRegisterComponent } from './client/client-register/client-registe
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
