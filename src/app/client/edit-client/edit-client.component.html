@@ -1,0 +1,42 @@
+
+<h1> Editando Cliente </h1>
+
+<form *ngIf="client" #f="ngForm" (ng.submit)="onSubmit(f.value)">
+    <div>
+        <label for="client_name">Nome</label> <br>
+        <input type="text" id="client_name" name="name" [ngModel]="client.name"> <br>
+    </div>
+    <div>
+        <label for="client_cpf">CPF</label> <br>
+        <input type="text" id="client_CPF" name="CPF" [ngModel]="client.CPF"> <br>
+    </div>
+    <div>
+        <label for="client_date">Data de Nascimento</label> <br>
+        <input type="date" id="client_date" name="date" [ngModel]="client.dateOfBirth"> <br>
+    </div>
+    <div>
+        <label for="client_profession">Profissão</label> <br>
+        <input type="text" id="client_profession" name="profession" [ngModel]="client.profession"> <br>
+    </div>
+    <div>
+        <label for="client_RG">RG</label> <br>
+        <input type="text" id="client_RG" name="rg" [ngModel]="client.RG"> <br>
+    </div>
+    <div>
+        <label for="client_address">Endereço</label> <br>
+        <input type="text" id="client_address" name="address" [ngModel]="client.address"> <br>
+    </div>
+    <div>
+        <label for="client_email">E-mail</label> <br>
+        <input type="text" id="client_email" name="email" [ngModel]="client.email"> <br>
+    </div><div>
+        <label for="client_telephone">Telefone</label> <br>
+        <input type="text" id="client_telephone" name="telephone" [ngModel]="client.telephone"> <br>
+    </div>
+    
+    <input type="submit" id="edit_client_button" value="Editando Cliente">
+</form>
+
+<a href="#" (click)="show()">Show</a>
+<a href="#" (click)="back()">Back</a>
+
