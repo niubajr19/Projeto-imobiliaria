@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Client } from './client';
+import { AppService } from '../app.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ClientService {
     { name: 'João', dateOfBirth: '20/07/1997', cpf: '12354321123', profession: 'Estudante', rg: '3214323', address: 'Rua Logo ali', email: 'João...', telephone: 333333333 ,id: ++this.lastId},
     { name: 'Maria', dateOfBirth: '05/01/2000', cpf: '12345678906', profession: 'Analista de Sistemas', rg: '1232122', address: 'Rua Nova', email: 'Maria...', telephone: 222222222 ,id: ++this.lastId},  ];
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   add(client: Client) {
     if (!client.id){
@@ -48,5 +49,13 @@ export class ClientService {
   getAll(){
     return this.clients;
   };
+
+  changeMessage(message: string) {
+    this.appService.changeMessage(message);
+  }
+
+  clearMessage() {
+    this.appService.clearMessage();
+  }
 
 }

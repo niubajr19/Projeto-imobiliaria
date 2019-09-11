@@ -1,42 +1,43 @@
-
+<div class="container">
 <h1> Editando Cliente </h1>
 
-<form *ngIf="client" #f="ngForm" (ng.submit)="onSubmit(f.value)">
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <div>
-        <label for="client_name">Nome</label> <br>
-        <input type="text" id="client_name" name="name" [ngModel]="client.name"> <br>
+        <label for="client_name">Nome</label>
+        <input type="text" id="client_name" name="name" [ngModel]="client.name">
     </div>
     <div>
-        <label for="client_cpf">CPF</label> <br>
-        <input type="text" id="client_CPF" name="CPF" [ngModel]="client.CPF"> <br>
+        <label for="client_cpf">CPF</label>
+        <input type="text" id="client_CPF" name="CPF" [ngModel]="client.CPF">
     </div>
     <div>
-        <label for="client_date">Data de Nascimento</label> <br>
-        <input type="date" id="client_date" name="date" [ngModel]="client.dateOfBirth"> <br>
+        <label for="client_date">Data de Nascimento</label>
+        <input type="date" id="client_date" name="date" [ngModel]="client.dateOfBirth">
     </div>
     <div>
-        <label for="client_profession">Profissão</label> <br>
-        <input type="text" id="client_profession" name="profession" [ngModel]="client.profession"> <br>
+        <label for="client_profession">Profissão</label> 
+        <input type="text" id="client_profession" name="profession" [ngModel]="client.profession"> 
     </div>
     <div>
-        <label for="client_RG">RG</label> <br>
-        <input type="text" id="client_RG" name="rg" [ngModel]="client.RG"> <br>
+        <label for="client_RG">RG</label> 
+        <input type="text" id="client_RG" name="rg" [ngModel]="client.RG"> 
     </div>
     <div>
-        <label for="client_address">Endereço</label> <br>
-        <input type="text" id="client_address" name="address" [ngModel]="client.address"> <br>
+        <label for="client_address">Endereço</label> 
+        <input type="text" id="client_address" name="address" [ngModel]="client.address"> 
     </div>
     <div>
-        <label for="client_email">E-mail</label> <br>
-        <input type="text" id="client_email" name="email" [ngModel]="client.email"> <br>
+        <label for="client_email">E-mail</label> 
+        <input type="text" id="client_email" name="email" [ngModel]="client.email"> 
     </div><div>
-        <label for="client_telephone">Telefone</label> <br>
-        <input type="text" id="client_telephone" name="telephone" [ngModel]="client.telephone"> <br>
+        <label for="client_telephone">Telefone</label> 
+        <input type="text" id="client_telephone" name="telephone" [ngModel]="client.telephone">
     </div>
     
-    <input type="submit" id="edit_client_button" value="Editando Cliente">
+    <input type="submit" id="edit_client_button" value="Editar Cliente">
 </form>
 
 <a href="#" (click)="show()">Show</a>
 <a href="#" (click)="back()">Back</a>
 
+</div>
