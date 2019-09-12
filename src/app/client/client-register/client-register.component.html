@@ -1,38 +1,55 @@
 <h1>Novo Cliente</h1>
-    <form>
-        <div class="container">
-            <label for="user_name">Name</label><br>
-            <input type = text id="nome" placeholder="Nome Completo" style="text-align:center"><br></div>
+    
+    <form #form="ngForm" novalidate>
+            {{form.valid}}
+            {{form.value|json}}
+        <div class="campo">
+            <label class="control-label sr-only" for="client_name"><i class="fa fa-check"></i>Name</label><br>
+            <input style="text-align:center" required type = text name="name" placeholder="Nome Completo" autocomplete="off" ngModel><br>
+        </div>
 
-        <div class="container">
-            <label for="user_rg">RG</label><br>
-            <input id="rg" placeholder="RG" style="text-align:center"></div>
-        
-        <div class="container">
-            <label for="user_orgao">Orgão Exp.</label><br>
-            <input id="orgao" placeholder="Orgão Exp." style="text-align:center" ><br></div>
-        <div class="container">
-            <label for="user_cpf">CPF ou CNPJ</label><br>
-            <input id="cpf" placeholder="CPF ou CNPJ" style="text-align:center"><br></div>
-        <div class="container">
-            <label for="user_telefone">Telefone</label><br>
-            <input id="telefone" placeholder="Telefone" style="text-align:center"><br></div>
-        <div class="container">
-            <label for="usesr_email">Email</label><br>
-            <input id="email" placeholder="Email" style="text-align:center"><br></div>
-        
-        <div class="container">
-            <label for="user_job">Profissão</label><br>
-            <input id="profissao" placeholder="Profissão" style="text-align:center"><br></div>
-        
-        <div class="container">
-            <label for="user_adress">Endereço</label><br>
-            <input id="endereco" placeholder="Endereço" style="text-align:center"><br></div>
-        <div class="container">
-            <label for="user_type">Tipo de Cliente</label><br>
-            <input id="cliente" placeholder="Tipo de cliente" style="text-align:center" ><br></div>  
-        <button>Cadastro</button>
+        <div class="campo">
+            <label for="client_rg">RG</label><br>
+            <input style="text-align:center" required name="rg" placeholder="RG" ngModel>
+        </div>
+            
+        <div class="campo">
+            <label class ="control-label sr-only" for="client_rg)">Orgão Exp.</label><br>
+            <input style="text-align:center" required name="rgInfo" placeholder="Orgão Exp."  autocomplete="off" ngModel><br>
+        </div>
 
-    </form> 
+        <div class="campo">
+            <label for="client_cpf">CPF ou CNPJ</label><br>
+            <input style="text-align:center" required name="cpf" placeholder="CPF ou CNPJ" autocomplete="off" ngModel><br>
+        </div>
 
+        <div class="campo">
+            <label for="client_telefone">Telefone</label><br>
+            <input style="text-align:center" required name="telefone" placeholder="Telefone" autocomplete="off" ngModel><br>
+        </div>
+
+        <div class="campo">
+            <label for="client_email">Email</label><br>
+            <input style="text-align:center" required name="email" placeholder="Email" autocomplete="off" ngModel><br>
+        </div>
+            
+        <div class="campo">
+            <label for="client_job">Profissão</label><br>
+            <input style="text-align:center" required name="job" placeholder="Profissão" autocomplete="off" ngModel><br>
+        </div>
+            
+        <div class="campo">
+            <label for="client_adress">Endereço</label><br>
+            <input style="text-align:center" required name="adress" placeholder="Endereço" autocomplete="off" ngModel><br>
+        </div>
+
+        <div class="campo">
+            <label for="client_type">Tipo de Cliente</label><br>
+            <input style="text-align:center" required name="type" placeholder="Tipo de cliente"  autocomplete="off" ngModel><br>
+            
+        </div>  
+                
+    </form>
+    <br><br>
+    <button [disabled]="!form.valid">Cadastro</button>
 

@@ -1,6 +1,9 @@
+// --------- Angular Modules --------
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }from '@angular/forms'
 
+// --------- App Modules -------
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListClientComponent } from './client/list-client/list-client.component';
@@ -18,6 +21,7 @@ import { ClientRegisterComponent } from './client/client-register/client-registe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
