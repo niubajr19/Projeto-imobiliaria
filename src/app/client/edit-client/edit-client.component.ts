@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Client } from '../client';
 import { ClientService } from '../client.service';
@@ -12,29 +13,39 @@ import { ClientService } from '../client.service';
 })
 export class EditClientComponent implements OnInit {
 
-  public cliente: Client;
+  client: Client;
 
-  constructor(private service: ClientService, 
-              private route: ActivatedRoute, private router: Router) { }
+  cliente: FormGroup;
+
+  constructor(private service: ClientService, private formBuilder: FormBuilder,
+              private route: ActivatedRoute, private router: Router) {
+               }
 
   ngOnInit() {
+
+    this.cliente = this.formBuilder.group({
+
+      name: null,
+      cpf: null,
+      dateOfBirth: null,
+      profession: null,
+      rg: null,
+      address: null,
+      email: null,
+      telephone: null,
+    }, { validators: Validators.required});
+
+
     this.route.params.pipe(
       switchMap( (params: Params) => this.loadClient(+params['id']) )
-    ).subscribe( (cliente: Client) => this.cliente = cliente );
+    ).subscribe( (cliente: Client) => this.client = cliente );
   }
 
   onSubmit(form: any) {
-
-    this.cliente.name = form.name;
-    this.cliente.cpf = form.CPF;
-    this.cliente.address = form.address;
-    this.cliente.email = form.email;
-    this.cliente.profession = form.profession;
-    this.cliente.dateOfBirth = form.dateOfBirth;
-    this.cliente.rg = form.RG;
-    this.cliente.telephone = form.telephone;
-
-    this.router.navigate(['/books', this.cliente.id]);
+    
+    this.service.add(new Client(form.name, form.CPF, form.dateOfBirth, form.profession, form.RG, form.address, form.email, form.telephone));
+    
+    this.router.navigate(['/books', this.client.id]);
   }
 
   loadClient(id: number): Promise<Client> {
@@ -42,7 +53,7 @@ export class EditClientComponent implements OnInit {
   }
 
   show(){
-    this.router.navigate(['/client', this.cliente.id]);
+    this.router.navigate(['/client', this.client.id]);
     return false;
   }
 
