@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Client } from '../client';
 import { ClientService } from '../client.service';
@@ -18,13 +17,12 @@ export class EditClientComponent implements OnInit {
   cliente: FormGroup;
 
   constructor(private service: ClientService, private formBuilder: FormBuilder,
-              private route: ActivatedRoute, private router: Router) {
-               }
+              private route: ActivatedRoute, private router: Router) {}
+
 
   ngOnInit() {
 
     this.cliente = this.formBuilder.group({
-
       name: null,
       cpf: null,
       dateOfBirth: null,
@@ -44,7 +42,7 @@ export class EditClientComponent implements OnInit {
 
   onSubmit(form: any) {
     
-    this.service.add(new Client(form.name, form.CPF, form.dateOfBirth, form.profession, form.RG, form.address, form.email, form.telephone));
+    this.service.update(new Client(form.name, form.cpf, form.dateOfBirth, form.profession, form.rg, form.address, form.email, form.telephone));
     
     this.router.navigate(['/client/list']);
   }
@@ -59,9 +57,8 @@ export class EditClientComponent implements OnInit {
   }
 
   back(){
-    this.router.navigate(['/client/list']);
+    this.router.navigate(['/client', 'list']);
     return false;
   }
-
 
 }

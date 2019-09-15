@@ -8,7 +8,8 @@ export class Client {
         public dateOfBirth: String,
         public profession: String,
         public rg: String,
-        public address: String,
+        public address: { street: string, number: number, 
+            district: String},
         public email: String,
         public telephone: number,
     ){}
