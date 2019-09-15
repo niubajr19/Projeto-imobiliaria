@@ -18,7 +18,7 @@ export class ListClientComponent{
     private service: ClientService) {
   }
 
-    clients(): Client[]{
+    get clients(): Client[]{
         return this.service.getAll();
     }
 
