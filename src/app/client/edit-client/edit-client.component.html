@@ -2,34 +2,35 @@
 <h1> Editando Cliente </h1>
 
 <form [formGroup]="cliente" (ngSubmit)="onSubmit(cliente.value)">
-    <div>
+    <div class="campo">
         <label for="client_name">Nome</label> <br>
         <input type="text" id="client_name" name="name" formControlName="name">
     </div>
-    <div>
+    <div class="campo">
         <label for="client_cpf">CPF</label> <br>
         <input type="text" id="client_CPF" name="CPF" formControlName="cpf">
     </div>
-    <div>
+    <div class="campo">
         <label for="client_date">Data de Nascimento</label> <br>
         <input type="date" id="client_date" name="date" formControlName="dateOfBirth">
     </div>
-    <div>
+    <div class="campo">
         <label for="client_profession">Profissão</label> <br>
         <input type="text" id="client_profession" name="profession" formControlName="profession"> 
     </div>
-    <div>
+    <div class="campo">
         <label for="client_RG">RG</label> <br>
         <input type="text" id="client_RG" name="rg" formControlName="rg"> 
     </div>
-    <div>
+    <div class="campo">
         <label for="client_address">Endereço</label> <br>
         <input type="text" id="client_address" name="address" formControlName="address"> 
     </div>
-    <div>
+    <div class="campo">
         <label for="client_email">E-mail</label> <br>
         <input type="text" id="client_email" name="email" formControlName="email"> 
-    </div><div>
+    </div>
+    <div class="campo">
         <label for="client_telephone">Telefone</label> <br>
         <input type="text" id="client_telephone" name="telephone" formControlName="telephone">
     </div>
