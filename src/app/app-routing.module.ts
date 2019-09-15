@@ -10,7 +10,7 @@ import { ClientComponent } from './client/client.component';
 const routes: Routes = [
   {path:'client', component: ClientComponent},
   {path:'client/list', component: ListClientComponent},
-  {path: 'client/edit', component: EditClientComponent}
+  {path: 'client/edit/:id', component: EditClientComponent}
 
 ];
 

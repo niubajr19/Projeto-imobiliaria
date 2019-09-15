@@ -36,16 +36,17 @@ export class EditClientComponent implements OnInit {
     }, { validators: Validators.required});
 
 
-    this.route.params.pipe(
-      switchMap( (params: Params) => this.loadClient(+params['id']) )
-    ).subscribe( (cliente: Client) => this.client = cliente );
+    this.route.paramMap.subscribe(parameterMap => {
+      const id = +parameterMap.get('id');
+      this.loadClient(id);
+    });
   }
 
   onSubmit(form: any) {
     
     this.service.add(new Client(form.name, form.CPF, form.dateOfBirth, form.profession, form.RG, form.address, form.email, form.telephone));
     
-    this.router.navigate(['/books', this.client.id]);
+    this.router.navigate(['/client/list']);
   }
 
   loadClient(id: number): Promise<Client> {

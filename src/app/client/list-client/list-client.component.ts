@@ -29,7 +29,7 @@ export class ListClientComponent{
     }
 
     edit(id){
-      this.router.navigate(['/client', id, 'edit']);
+      this.router.navigate(['/client', 'edit', id]);
       return false;
     }
 
