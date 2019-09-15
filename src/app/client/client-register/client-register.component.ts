@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientRegisterComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
   }
 
-}
+  ngOnInit() {
+    }
+
+  }
+
