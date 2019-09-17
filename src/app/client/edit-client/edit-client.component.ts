@@ -28,9 +28,10 @@ export class EditClientComponent implements OnInit {
       dateOfBirth: null,
       profession: null,
       rg: null,
-      address: null,
+      address: { street: null, number: null, district: null },
       email: null,
       telephone: null,
+      type: null,
     }, { validators: Validators.required});
 
 
