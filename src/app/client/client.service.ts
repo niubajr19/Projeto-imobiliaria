@@ -11,9 +11,9 @@ export class ClientService {
   lastId = 0;
 
   clients: Client[] = [
-    {name: 'Junior', dateOfBirth: '04/05/1999', cpf: '12345678901', profession: 'Contador', rg: '5437623', address:{ street: 'Rua Qualquer', number: 111, district: 'Guarabira'}, email: 'Junior...', telephone: 111111111 ,id: ++this.lastId},
-    {name: 'João', dateOfBirth: '20/07/1997', cpf: '12354321123', profession: 'Estudante', rg: '3214323', address:{ street: 'Rua Logo ali', number: 222, district: 'Jacaraú'} , email: 'João...', telephone: 333333333 ,id: ++this.lastId},
-    {name: 'Maria', dateOfBirth: '05/01/2000', cpf: '12345678906', profession: 'Analista de Sistemas', rg: '1232122', address:{ street: 'Rua Nova', number: 333, district: 'Mamanguape'}, email: 'Maria...', telephone: 222222222 ,id: ++this.lastId},  ];
+    { name: 'Junior', dateOfBirth: '04/05/1999', cpf: '12345678901', profession: 'Contador', rg: '5437623', address: {street: 'Rua Qualquer', number: 43, district: 'centro'}, email: 'Junior...', telephone: 111111111 ,id: ++this.lastId},
+    { name: 'João', dateOfBirth: '20/07/1997', cpf: '12354321123', profession: 'Estudante', rg: '3214323', address: {street: 'Rua Logo ali', number: 88, district: 'campo'}, email: 'João...', telephone: 333333333 ,id: ++this.lastId},
+    { name: 'Maria', dateOfBirth: '05/01/2000', cpf: '12345678906', profession: 'Analista de Sistemas', rg: '1232122', address: {street: 'Rua Nova', number: 9876, district: 'areal'}, email: 'Maria...', telephone: 222222222 ,id: ++this.lastId},];
 
   constructor(private appService: AppService) { }
 
