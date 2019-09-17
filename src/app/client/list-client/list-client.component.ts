@@ -7,7 +7,7 @@ import { Client } from '../client';
 @Component({
   selector: 'app-list',
   templateUrl: './list-client.component.html',
-  styleUrls: ['./list-client.component.css']
+  styleUrls: ['./list-client.component.scss']
 })
 
 export class ListClientComponent{
