@@ -13,6 +13,8 @@ import { ClientRegisterComponent } from './client/client-register/client-registe
 import { EditClientComponent } from './client/edit-client/edit-client.component';
 import { ListClientComponent } from './client/list-client/list-client.component';
 import { AppService } from './app.service';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AppService } from './app.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
