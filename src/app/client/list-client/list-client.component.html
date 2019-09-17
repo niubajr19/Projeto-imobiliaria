@@ -5,7 +5,7 @@
         <th id="nameHeader">Name</th>
         <th id="typeHeader">Type</th>
         <th id="statusHeader">Status</th>
-        <th colspan="3"></th>
+        <th colspan="4"></th>
       </tr>
     </thead>
   
@@ -16,7 +16,7 @@
         <td>{{client.status}}</td>
         <td><a href="#" (click)="show(client.id)">Show</a></td>
         <td><a href="#" (click)="edit(client.id)">Edit</a></td>
-        <td><a href="#" (click)="destroy(client.id)">Destroy</a></td>
+        <td><a href="#" (click)="delete(client.id)">Delete</a></td>
       </tr>
     </tbody>
   </table>
