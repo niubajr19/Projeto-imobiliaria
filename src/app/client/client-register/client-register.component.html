@@ -1,8 +1,6 @@
 <h1>Novo Cliente</h1>
     
     <form #form="ngForm" novalidate>
-            {{form.valid}}
-            {{form.value|json}}
         <div class="campo">
             <label class="control-label sr-only" for="client_name"><i class="fa fa-check"></i>Name</label><br>
             <input style="text-align:center" required type = text name="name" placeholder="Nome Completo" autocomplete="off" ngModel><br>

@@ -10,9 +10,9 @@ import { ClientComponent } from './client/show-client/client.component';
 
 
 const routes: Routes = [
-  {path:'client', component: ClientComponent},
   {path:'client/list', component: ListClientComponent},
   {path: 'client/edit/:id', component: EditClientComponent},
+  {path: 'client/show/:id', component: ClientComponent},
   {path:'client/register',component:ClientRegisterComponent}
 
 ];
