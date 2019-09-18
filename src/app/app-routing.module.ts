@@ -6,10 +6,14 @@ import { EditClientComponent } from './client/edit-client/edit-client.component'
 import { ClientRegisterComponent } from './client/client-register/client-register.component';
 
 import { ClientComponent } from './client/show-client/client.component';
+import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './menu/login/login.component';
 
 
 
 const routes: Routes = [
+  {path:'',component:LoginComponent},
+  {path:'client/home',component:MenuComponent},
   {path:'client/list', component: ListClientComponent},
   {path: 'client/edit/:id', component: EditClientComponent},
   {path: 'client/show/:id', component: ClientComponent},
